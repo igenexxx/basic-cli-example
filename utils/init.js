@@ -1,6 +1,7 @@
 import welcome from 'cli-welcome';
 import checkNode from 'cli-check-node';
 import unhandled from 'cli-handle-unhandled';
+import boxen from 'boxen';
 
 export const init = (isMinimal, clear) => {
   unhandled();
@@ -17,7 +18,14 @@ export const init = (isMinimal, clear) => {
     clear
   });
 
-  const showName = () => console.log('Zhenya Sikirzhitsky');
+  const showName = () => console.log(boxen('Zhenya Sikirzhitsky', {
+    title: 'Say my name:',
+    titleAlignment: 'center',
+    padding: 1,
+    margin: 1,
+    borderStyle: 'double',
+    borderColor: 'yellow'
+  }));
 
   return isMinimal ? showName() : showWelcome();
 }
