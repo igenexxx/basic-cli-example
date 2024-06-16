@@ -9,3 +9,15 @@ export const showDebugInfo = (showDebug) => {
     console.log('\n');
   }
 }
+
+export const showError = (err) => {
+  const { flags: { debug: showDebug } } = cli;
+
+  if (showDebug) {
+    alert({ type: 'error', msg: 'ERROR ⬇️'})
+    console.error(err);
+    console.log('\n');
+  } else {
+    alert({ type: 'error', msg: 'Something went wrong! Run with `--debug` flag for more info.'})
+  }
+}
