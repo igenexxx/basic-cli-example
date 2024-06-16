@@ -14,6 +14,8 @@ const helpText = `
      ${yellow('--social, -s')}     Include social message ${dim('(default: true)')}
      ${yellow('--bio, -b')}        Include bio message ${dim('(default: true)')}
      ${yellow('--ad, -a')}         Include ad message ${dim('(default: true)')}
+     ${yellow('--stats, -t')}      Include stats
+     ${yellow('--posts, -p')}      Include posts
      ${yellow('--minimal, -m')}    Minimal output
      ${yellow('--clear, -c')}      Clear console ${dim('(default: true)')}
      ${yellow('--no-social')}      Exclude social message
@@ -48,6 +50,14 @@ const options = {
       type: 'boolean',
       shortFlag: 'a',
       default: true,
+    },
+    stats: {
+      type: 'boolean',
+      shortFlag: 't',
+    },
+    posts: {
+      type: 'boolean',
+      shortFlag: 'p',
     },
     minimal: {
       type: 'boolean',

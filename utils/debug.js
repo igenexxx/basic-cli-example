@@ -10,7 +10,7 @@ export const showDebugInfo = (showDebug) => {
   }
 }
 
-export const showError = (err) => {
+export const showError = (exitCode = 1) =>  (err) => {
   const { flags: { debug: showDebug } } = cli;
 
   if (showDebug) {
@@ -20,4 +20,6 @@ export const showError = (err) => {
   } else {
     alert({ type: 'error', msg: 'Something went wrong! Run with `--debug` flag for more info.'})
   }
+
+  process.exitCode = exitCode;
 }
